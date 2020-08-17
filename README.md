@@ -25,13 +25,11 @@ It is recommended to run these tests once the server is set up in order to ensur
 
 1. Navigate to localhost/Camagru/
 2. Click signup and create an account. make sure to use a valid email address
-3. Check your inbox for a verification email and verify your account. If you do not 4. recieve one check that you have configured your php.ini and hmail server correctly
+3. Check your inbox for a verification email and verify your account. If you do not recieve one check that you have configured your php.ini and hmail server correctly
 Log in to your account.
-click on Camagru in the top left corner and attempt to take a photo.
-Select a sticker and enter a title.
-click post
-Your post should appear in the feed now.
-Comment on, and like your post, then refresh. If the comment and like are still present all is well.
-Lastly attempt to delete the post.
+4. click on Camagru in the top left corner and attempt to take a photo.
+5. go to edit photo Select/click on an image you want to add a sticker and choose the sticke click save.
+6. Comment on, and like your post, then refresh. If the comment and like are still present all is well.
+7. Lastly attempt to delete the post.
 If all these steps passed then the website is fully functional
 
