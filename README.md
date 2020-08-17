@@ -1,3 +1,4 @@
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/index.png)
 # camagru
 
 * the first web project of the school 42 :
@@ -20,7 +21,7 @@
 * configure the php.ini file to send emails
 * Enter database credentials into config/database.php.
 
-## How to run the programe (Tests)
+### How to run the programe (Tests)
 It is recommended to run these tests once the server is set up in order to ensure that everything is working properly.
 
 1. Navigate to localhost/Camagru/
@@ -33,3 +34,4 @@ Log in to your account.
 7. Lastly attempt to delete the post.
 If all these steps passed then the website is fully functional
 
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Home.png)
