@@ -17,13 +17,15 @@ if (isset($_POST['logout'])){
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <style>
 * {box-sizing: border-box;}
 
 body { 
   margin: 0;
-  font-family: Ropa Sans;
+  /* font-family: Ropa Sans; */
 }
 
 .header {
@@ -43,6 +45,11 @@ body {
   border-radius: 4px;
 }
 .logout_btn{
+  background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
   float: left;
   color: black;
   text-align: center;
@@ -54,7 +61,7 @@ body {
 }
 
 .header a.logo {
-  font-size: 25px;
+  font-size: 50px;
   font-weight: bold;
 }
 

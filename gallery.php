@@ -74,50 +74,34 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>gallary</title>
 <head>
    
     <style>
         /* The grid: Four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
+
 
 /* Style the images inside the grid */
-.column img {
-  opacity: 0.8; 
-  cursor: pointer; 
-}
 
-.column img:hover {
-  opacity: 1;
-}
+
+
 
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-            .container_gallery{
-                margin: 0 auto;
-                width: 100%; 
-            }
-            .comment {
-                height: 70px;
-                width: 90%;
-                border-color: #333;
-                border-radius: 10px,
-            }
-            .col-sm-3{
-            /* padding:20px;
-            float:left;
-            width:33.3%;
-            height: auto; */
-        }
-        .btn {
+
+         
+.comment {
+    height: 70px;
+    width: 90%;
+    border-color: #333;
+    border-radius: 10px,
+    }
+
+.btn {
   background-color: #ddd;
   border: none;
   color: white;
@@ -142,12 +126,15 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 </head>
 <body>
     <br/>
-    <div class="row">
-        <div class="column">
+    <div class="container">
+  
+        
                 <strong>Gallery (like, comment an image) </strong>
             <hr/>
             <?php foreach($pictures as $img):?>
-                    <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-md-3">
+                    <div class="thumbnail">
                         <h3><?php echo $img['users_name']; ?></h3>
                         <img src="uploads/<?php echo $img['pictures']?>" width="100%"><br>
                         <a href="like.php?type=picture&pictures_id=<?php echo $img['pictures_id']; ?>">Like</a>
@@ -177,8 +164,10 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                             </form>
                     
                     </div>
+                </div>
             <?php endforeach; ?>
-        </div>
+        
+    </div>
     </div>
 
     <div class="footer">

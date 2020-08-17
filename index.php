@@ -67,7 +67,7 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 /* Float four columns side by side */
@@ -119,11 +119,11 @@ body {
         }
         h1 {
             font-family: Ropa Sans;
-            font-weight: normal;
-            font-size: 48px;
-            line-height: 51px;
+            /* font-weight: normal; */
+            font-size: 70px;
+            line-height: 10px;
             text-align: center;
-            font-style: italic;
+            /* font-style: italic; */
         }
         h3 {
             font-weight: normal;
@@ -164,8 +164,8 @@ body {
         <h1>camagru</h1>
         <h3>share your moments<h3>
         <form method="post">
-            <input class="btn" type="submit" name="signup" value="Sign up">
-            <input class="btn" type="submit" name="login" value="Log in">
+            <input class="btn" type="submit" name="signup" value="  Sign up  "style="margin:15px;">
+            <input class="btn" type="submit" name="login" value="   Log in   " style="margin:15px;">
         </form>
     </div>
     <!-- <div class="container">
