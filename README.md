@@ -1,3 +1,4 @@
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/index.png)
 # camagru
 
 * the first web project of the school 42 :
