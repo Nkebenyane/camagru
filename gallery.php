@@ -122,6 +122,11 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                 transition: all ease 0.8s;
             }
 .btn:hover {opacity: 0.6}
+
+
+.subc {
+    background-color: #EF52CC;
+}
     </style>
 </head>
 <body>
@@ -137,6 +142,8 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                     <div class="thumbnail">
                         <h3><?php echo $img['users_name']; ?></h3>
                         <img src="uploads/<?php echo $img['pictures']?>" width="100%"><br>
+<div class="subc">
+
                         <a href="like.php?type=picture&pictures_id=<?php echo $img['pictures_id']; ?>">Like</a>
                         <a href="like.php?type=delete&pictures_id=<?php echo $img['pictures_id']; ?>">Delete</a></br>
                         <?php if($img['likes'] == 0):?>
@@ -162,7 +169,7 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                                 <br/>
                                 <input class="submit" name="comment_btn" type="submit" value="Post"/>
                             </form>
-                    
+</div>
                     </div>
                 </div>
             <?php endforeach; ?>
