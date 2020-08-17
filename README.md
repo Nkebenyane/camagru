@@ -21,7 +21,7 @@
 * configure the php.ini file to send emails
 * Enter database credentials into config/database.php.
 
-## How to run the programe (Tests)
+### How to run the programe (Tests)
 It is recommended to run these tests once the server is set up in order to ensure that everything is working properly.
 
 1. Navigate to localhost/Camagru/
