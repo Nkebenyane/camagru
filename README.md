@@ -35,3 +35,4 @@ Log in to your account.
 If all these steps passed then the website is fully functional
 
 ![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Home.png)
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Gallery.png)
