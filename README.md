@@ -34,3 +34,4 @@ Log in to your account.
 7. Lastly attempt to delete the post.
 If all these steps passed then the website is fully functional
 
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Home.png)
