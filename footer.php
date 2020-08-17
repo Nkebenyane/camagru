@@ -9,7 +9,7 @@
 body{
     padding: 0;
     /* margin: 0; */
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
     height: 300px;
 }
 .container{
@@ -20,7 +20,7 @@ footer {
     text-align: center;
     overflow: hidden;
     /* position: fixed; */
-    background-color: #333;
+    background-color: #EF52CC;
     bottom: 0;
     width: 100%;
 }
@@ -44,7 +44,7 @@ footer .footer-box .fa{
 </head>
 <body>
 <footer>
-  <div class="container">
+  <!-- <div class="container"> -->
       <div class="footer-box">
           <p>Copyright &copy; 2018 camagru</p>
       </div>
@@ -53,7 +53,7 @@ footer .footer-box .fa{
           <a href="https://twitter.com/login?lang=en"> <i class="fa fa-twitter"></i></a>
           <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fa fa-instagram"></i></a>
       </div>
-  </div>
+  <!-- </div> -->
 </footer>
 </body>
 </html>

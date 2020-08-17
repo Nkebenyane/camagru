@@ -42,7 +42,7 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
     <style>
             .container_gallery{
                 margin: 0 auto;
-                width: 55%; 
+                width: 100%; 
             }
             .comment {
                 height: 70px;
@@ -71,23 +71,31 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                 <h3><?php echo $img['users_name']; ?></h3>
                 <a href="stickers.php?pictures_id=<?php echo $img['pictures_id']; ?>"><img src="uploads/<?php echo $img['pictures'] ?>"></a><br>
                 <!-- <a href="like.php?type=picture&pictures_id=<?php// echo $img['pictures_id']; ?>">Like</a> -->
+                <?php if($img['likes'] == 0):?>
+                    <?php echo $img['likes']?> like.
+                <?php endif;?>
                 <?php if($img['likes'] == 1):?>
-                    <p><?php echo $img['likes']?> like.</p>
+                    <?php echo $img['likes']?> like.
                 <?php endif;?>
                 <?php if($img['likes'] > 1):?>
-                    <p><?php echo $img['likes']?> likes.</p>
+                    <?php echo $img['likes']?> likes.
                 <?php endif;?>
                 <?php if(!empty($img['liked_by'])): ?>
-                    <ul>
+                    <!-- <ul> -->
                         <?php foreach($img['liked_by'] as $user):?>
-                            <li><?php echo $user;?></li>
+                            <?php echo $user;?> |
                         <?php endforeach; ?>
-                    </ul>
+                    <!-- </ul> -->
+            
                 <?php endif;?>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
-    <?php endforeach; ?>
-    
+    <div class="footer">
+        <?php
+            include 'footer.php';
+        ?>
+    </div>
 </body>
 </html>

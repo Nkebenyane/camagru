@@ -25,7 +25,8 @@
         $str = $str.".png";
 
         
-        $path = "/goinfre/mnkebeny/Desktop/MAMP/apache2/htdocs/camagru/uploads/".$str;
+        $path = "C:/xampp/htdocs/camagru/uploads/".$str;
+      
         // imagepng($p1, $path);
         
         file_put_contents($path, base64_decode(preg_replace('#^data:image/\w+;base64,#i', '',$_POST['key'])));

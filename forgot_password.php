@@ -2,7 +2,7 @@
 
     session_start();
 
-    $conn = new PDO('mysql:host=localhost;dbname=camagru','root', '123456');
+    $conn = new PDO('mysql:host=localhost;dbname=camagru','root', '');
 
     if (isset($_POST['submit'])){
 
@@ -80,7 +80,9 @@
         <form method="post">
             <p>username: <input class="details" type="text" name="name" required></p>
             <p>email: <input class="details" type="text" name="email" required></p>
-            <p><input type="submit" name="submit" value="submit"/></p>
+            <p><input class="submit" type="submit" name="submit" value="submit"/>
+            <a class="submit" href="Index.php">Cancel</a>
+            </p>
         </form>
     </div>
 </body>

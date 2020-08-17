@@ -71,13 +71,36 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>gallary</title>
+<head>
+   
     <style>
+        /* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
             .container_gallery{
                 margin: 0 auto;
                 width: 100%; 
@@ -89,58 +112,70 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                 border-radius: 10px,
             }
             .col-sm-3{
-            padding:20px;
+            /* padding:20px;
             float:left;
             width:33.3%;
+            height: auto; */
         }
+        .btn {
+  background-color: #ddd;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+}
+.submit {
+                background-image: none;
+                padding: 8px 50px;
+                margin-top:20px; 
+                border: 1px solid #25a08d;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+.btn:hover {opacity: 0.6}
     </style>
 </head>
 <body>
     <br/>
     <div class="row">
-        <div class="container_gallery">
+        <div class="column">
                 <strong>Gallery (like, comment an image) </strong>
             <hr/>
             <?php foreach($pictures as $img):?>
                     <div class="col-sm-3">
                         <h3><?php echo $img['users_name']; ?></h3>
-                        <img src="uploads/<?php echo $img['pictures'] ?>" width="80%" height="300px"><br>
+                        <img src="uploads/<?php echo $img['pictures']?>" width="100%"><br>
                         <a href="like.php?type=picture&pictures_id=<?php echo $img['pictures_id']; ?>">Like</a>
-                        <a href="like.php?type=delete&pictures_id=<?php echo $img['pictures_id']; ?>">Delete</a>
+                        <a href="like.php?type=delete&pictures_id=<?php echo $img['pictures_id']; ?>">Delete</a></br>
+                        <?php if($img['likes'] == 0):?>
+                            <?php echo $img['likes']?> like
+                        <?php endif;?>
                         <?php if($img['likes'] == 1):?>
-                            <p><?php echo $img['likes']?> like.</p>
+                            <?php echo $img['likes']?> like
                         <?php endif;?>
                         <?php if($img['likes'] > 1):?>
-                            <p><?php echo $img['likes']?> likes.</p>
+                            <?php echo $img['likes']?> likes
                         <?php endif;?>
+
                         <?php if(!empty($img['liked_by'])): ?>
-                            <ul>
+                            
                                 <?php foreach($img['liked_by'] as $user):?>
-                                    <li><?php echo $user;?></li>
+                                    <?php echo $user;?> | 
                                 <?php endforeach; ?>
-                            </ul>
+                            
                         <?php endif;?>
                             <form action="" method="post">
                                 <a name="comment_btn" type="submit" href="gallery.php?type=comment&pictures_id=<?php echo $img['pictures_id']; ?>">comment</a>
                                 <textarea class="comment" type="text" name="comment" placeholder="comment" required></textarea>
                                 <br/>
-                                <input name="comment_btn" type="submit" value="Post"/>
+                                <input class="submit" name="comment_btn" type="submit" value="Post"/>
                             </form>
-                            <?php                                
-                                $id = $img['pictures_id'];
-                                $comquery = $conn->prepare("SELECT * FROM `comments` WHERE `pictures_id` = '$id'");
-                                $comquery->execute();
-                                while ($com = $comquery->fetch(PDO::FETCH_ASSOC)){
-
-                                    ?>
-                                        <ul>
-                                            <li><?php echo $com['users_name']?></p>
-                                            <p><?php echo $com['comment']?></p>
-                                        </ul>
-                                    <?php
-                                }
-                            ?>
-                           
+                    
                     </div>
             <?php endforeach; ?>
         </div>

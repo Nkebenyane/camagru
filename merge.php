@@ -37,7 +37,7 @@ $conn = getConnection();
                $i++;
            }
            $str = $str.".png";
-           $path = "/goinfre/mnkebeny/Desktop/MAMP/apache2/htdocs/camagru/uploads/".$str;
+           $path = "C:/xampp/htdocs/camagru/uploads/".$str;
            imagepng($p1, $path);
            
            $sql = "INSERT INTO pictures (pictures, users_name) VALUES ('".$str."', '".$result['users_name']."')";

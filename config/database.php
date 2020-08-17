@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $conn = new PDO("mysql:host=localhost", "root", "123456");
+    $conn = new PDO("mysql:host=localhost", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    
     $sql = "CREATE DATABASE IF NOT EXISTS camagru";

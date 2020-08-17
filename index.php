@@ -55,21 +55,94 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
     };
 ?>
 <!DOCTYPE html>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
 <html>
 <head>
     <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+    /* float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; */
+  margin: 0 auto;
+                width: 100%; 
+}
+
+/* Remove extra left and right margins, due to padding */
+/* .row {margin: 0 -5px;} */
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* Responsive columns */
+/* @media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+} */
+
+/* Style the counter cards */
+.card {
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  transition: 0.3s;
+  /* width: 40%; */
+  padding:20px;
+            float:left;
+            width:33.3%;
+  
+}
         .top-container{
             margin: 0 auto;
-            width: 60%;
+            /* width: 60%; */
             text-align: center;
-            
+            background-color: #EF52CC;
+            /* color: #ffffff; */
+            padding: 15px;
         }
-   
+        h1 {
+            font-family: Ropa Sans;
+            font-weight: normal;
+            font-size: 48px;
+            line-height: 51px;
+            text-align: center;
+            font-style: italic;
+        }
+        h3 {
+            font-weight: normal;
+        }
         .btn{
-            border: 1px solid lightblue;
-            border-radius: 4px;
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: white;
+            color: #EF52CC;
         }
-        .container_gallery{
+        .btn:hover {
+            background-color: #EF52CC;
+            color: white;
+            }
+        /* .container_gallery{
                 margin: 0 auto;
                 width: 100%; 
             }
@@ -83,28 +156,33 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
             padding:20px;
             float:left;
             width:33.3%;
-        }
+        } */
     </style>
 </head>
 <body>
     <div class="top-container">
         <h1>camagru</h1>
-        <h2>share your memories<h2>
+        <h3>share your moments<h3>
         <form method="post">
             <input class="btn" type="submit" name="signup" value="Sign up">
             <input class="btn" type="submit" name="login" value="Log in">
         </form>
     </div>
-    <div class="container">
-    <br/>
+    <!-- <div class="container">
+    <br/> -->
+    <!-- <br/>
+        <strong>Gallery (like, comment an image) </strong>
+    <hr/> -->
     <div class="row">
-        <div class="container_gallery">
-                <strong>Gallery (like, comment an image) </strong>
-            <hr/>
+        <div class="column">
+            
             <?php foreach($pictures as $img):?>
-                    <div class="col-sm-3">
+                <div class="card">
                         <h3><?php echo $img['users_name']; ?></h3>
-                        <img src="uploads/<?php echo $img['pictures'] ?>" width="100%" height="300px"><br>
+                        <img src="uploads/<?php echo $img['pictures'] ?>"width="100%" height="350px"><br>
+                        <?php if($img['likes'] == 0):?>
+                            <p><?php echo $img['likes']?> like.</p>
+                        <?php endif;?>
                         <?php if($img['likes'] == 1):?>
                             <p><?php echo $img['likes']?> like.</p>
                         <?php endif;?>
@@ -112,14 +190,14 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
                             <p><?php echo $img['likes']?> likes.</p>
                         <?php endif;?>
                         <?php if(!empty($img['liked_by'])): ?>
-                            <ul>
+                            <!-- <ul> -->
                                 <?php foreach($img['liked_by'] as $user):?>
-                                    <li><?php echo $user;?></li>
+                                    <?php echo $user;?> |
                                 <?php endforeach; ?>
-                            </ul>
+                            <!-- </ul> -->
                         <?php endif;?>
-                         
-                            <strong>people's comments</strong>
+                         <br/>
+                        <strong>people's comments</strong>
                             <?php                                
                                 $id = $img['pictures_id'];
                                 $comquery = $conn->prepare("SELECT * FROM `comments` WHERE `pictures_id` = '$id'");
@@ -138,6 +216,10 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
             <?php endforeach; ?>
         </div>
     </div>
+    <div class="footer">
+        <?php
+            include 'footer.php';
+        ?>
     </div>
 </body>
 </html>

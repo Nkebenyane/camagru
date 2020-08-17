@@ -30,17 +30,22 @@
 ?>
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Home</title>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
+
         .btn {
-            width:90px;
-            height:90px;
-            border-radius: 100px;
-            margin:0 auto;
+            border: 2px solid black;
+            background-color: #EF52CC;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            /* color: #EF52CC; */
         }
         .row{
             width: 100%;
@@ -55,9 +60,9 @@
             padding:20px;
             float:left;
             width:50%;
+            
         }
        
-        }
         @media screen and (max-width:800px) {
         .col-sm-1, .col-sm-2 {
             width:100%; /* The width is 100%, when the viewport is 800px or smaller */
@@ -70,7 +75,7 @@
 
         .fill{
             background-image: url("stickers/11.png");
-            black url(/images/back.jpg) no-repeat top center fixed;
+            /* black url(/images/back.jpg) no-repeat top center fixed; */
             -webkit-background-size: cover;
             background-size: cover;
             position: sticky;
@@ -88,8 +93,8 @@
     background-size: cover;
       display: inline-block;
       height: 440px;
-      width: 486px;
-      margin: 10px;
+      /* width: 486px; */
+      /* margin: 10px; */
     }
 
     .empty{
@@ -171,7 +176,7 @@
             include 'footer.php';
         ?>
     </div>
-    
+</div>  
     <script src="js/try.js"></script>
     <script src="js/home.js"></script>
 </body>
