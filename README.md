@@ -10,7 +10,7 @@
 * JavaScript
 * CSS
 ## Requirement 
-* XMAPP = is a free and open-source cross-platform web server solution https://www.apachefriends.org/download.html
+* XAMPP = is a free and open-source cross-platform web server solution https://www.apachefriends.org/download.html
 
 ## Instractions
 
@@ -19,7 +19,7 @@
 
 ### How to set up and configure database and web server
 
-* Download XMAPP from the bitnami website
+* Download XAMPP.
 * Copy the camagru directory you cloned/downloaded into C:\xampp\htdocs
 * configure the php.ini file to send emails
 * Enter database credentials into Camagru/config/database.php.
@@ -27,13 +27,13 @@
 ### How to run the programe (Tests)
 It is recommended to run these tests once the server is set up in order to ensure that everything is working properly.
 
-1. Navigate to localhost/Camagru/
+1. Navigate to localhost/Camagru/ (then our index.php will show on the browser)
 2. Click signup and create an account. make sure to use a valid email address
 3. Check your inbox for a verification email and verify your account. If you do not recieve one check that you have configured your php.ini correctly
 4. Log in to your account.
 5. On the home page attempt to take a photo.
 6. go to edit edit photo/stickers tab to add a sticker and choose the sticke click save.
-7. Comment on, and like your post, then refresh.
+7. Comment on, and like your post.
 8. Lastly attempt to delete the post.
 If all these steps passed then the website is fully functional
 
