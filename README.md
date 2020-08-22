@@ -5,10 +5,12 @@
 * the first web project of the school 42 :
 * a little Instagra like where you can apply fun filters to webcam photos and interact with other users
 
-## Requirement 
+## Programming Languahe used
 * PHP
-* XMAPP = is a free and open-source cross-platform web server solution
 * JavaScript
+* CSS
+## Requirement 
+* XMAPP = is a free and open-source cross-platform web server solution https://www.apachefriends.org/download.html
 
 ## Instractions
 
