@@ -2,10 +2,10 @@
 ![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Home.png)
 # camagru
 
-* the first web project of the school 42 :
+* the first web project for wethinkcode_ :
 * a little Instagra like where you can apply fun filters to webcam and uploaded photos and interact with other users
 
-## Programming Languahe used
+## Programming Language used
 * PHP
 * JavaScript
 * CSS
