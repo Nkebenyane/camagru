@@ -7,7 +7,7 @@
 
 ## Requirement 
 * PHP
-* MAMP
+* XMAPP
 * JavaScript
 
 ## Instractions
