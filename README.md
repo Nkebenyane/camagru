@@ -3,7 +3,7 @@
 # camagru
 
 * the first web project of the school 42 :
-* a little Instagra like where you can apply fun filters to webcam photos and interact with other users
+* a little Instagra like where you can apply fun filters to webcam and uploaded photos and interact with other users
 
 ## Programming Languahe used
 * PHP
