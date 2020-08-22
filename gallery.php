@@ -83,43 +83,36 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 <head>
    
     <style>
-        /* The grid: Four equal columns that floats next to each other */
-
-
-/* Style the images inside the grid */
-
-
-
-
-/* Clear floats after the columns */
-
-         
 .comment {
     height: 70px;
     width: 90%;
-    border-color: #333;
-    border-radius: 10px,
+    /* border-color: #333; */
+    /* border-radius: 10px; */
+    border: #ddd;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     }
 
 .btn {
-  background-color: #ddd;
+  /* background-color: #ddd; */
   border: none;
   color: white;
-  padding: 16px 32px;
+  /* padding: 16px 32px; */
   text-align: center;
-  font-size: 16px;
+  /* font-size: 16px; */
   margin: 4px 2px;
   opacity: 1;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 .submit {
-                background-image: none;
+                /* background-image: none;
                 padding: 8px 50px;
-                margin-top:20px; 
-                border: 1px solid #25a08d;
-                -webkit-transition: all ease 0.8s;
+                margin-top:20px;  */
+                /* border: 1px solid #25a08d; */
+                /* -webkit-transition: all ease 0.8s;
                 -moz-transition: all ease 0.8s;
-                transition: all ease 0.8s;
+                transition: all ease 0.8s; */
             }
 .btn:hover {opacity: 0.6}
 
@@ -131,56 +124,64 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 </head>
 <body>
     <br/>
-    <div class="container">
-  
-        
-                <strong>Gallery (like, comment an image) </strong>
+    <div class="container"> 
+            <strong>Gallery (like, comment an image) </strong>
             <hr/>
-            <?php foreach($pictures as $img):?>
-                <div class="row">
-                    <div class="col-md-3">
+            <div class="row">
+
+        <?php foreach($pictures as $img):?>
+                <div class="col-md-3">
                     <div class="thumbnail">
                         <h3><?php echo $img['users_name']; ?></h3>
-                        <img src="uploads/<?php echo $img['pictures']?>" width="100%"><br>
-<div class="subc">
+                        <img src="uploads/<?php echo $img['pictures']?> "width="100%"height="350px"><br>
 
-                        <a href="like.php?type=picture&pictures_id=<?php echo $img['pictures_id']; ?>">Like</a>
-                        <a href="like.php?type=delete&pictures_id=<?php echo $img['pictures_id']; ?>">Delete</a></br>
-                        <?php if($img['likes'] == 0):?>
-                            <?php echo $img['likes']?> like
-                        <?php endif;?>
-                        <?php if($img['likes'] == 1):?>
-                            <?php echo $img['likes']?> like
-                        <?php endif;?>
-                        <?php if($img['likes'] > 1):?>
-                            <?php echo $img['likes']?> likes
-                        <?php endif;?>
+                        <div class="subc">
 
-                        <?php if(!empty($img['liked_by'])): ?>
-                            
-                                <?php foreach($img['liked_by'] as $user):?>
-                                    <?php echo $user;?> | 
-                                <?php endforeach; ?>
-                            
-                        <?php endif;?>
-                            <form action="" method="post">
-                                <a name="comment_btn" type="submit" href="gallery.php?type=comment&pictures_id=<?php echo $img['pictures_id']; ?>">comment</a>
-                                <textarea class="comment" type="text" name="comment" placeholder="comment" required></textarea>
-                                <br/>
-                                <input class="submit" name="comment_btn" type="submit" value="Post"/>
-                            </form>
-</div>
+                            <a class="submit btn" href="like.php?type=picture&pictures_id=<?php echo $img['pictures_id']; ?>">Like</a>
+                            <a class="btn btn-warning" href="like.php?type=delete&pictures_id=<?php echo $img['pictures_id']; ?>">Delete</a></br>
+                            <?php if($img['likes'] == 0):?>
+                                <?php echo $img['likes']?> like
+                            <?php endif;?>
+                            <?php if($img['likes'] == 1):?>
+                                <?php echo $img['likes']?> like
+                            <?php endif;?>
+                            <?php if($img['likes'] > 1):?>
+                                <?php echo $img['likes']?> likes
+                            <?php endif;?>
+
+                            <?php if(!empty($img['liked_by'])): ?>
+                                
+                                    <?php foreach($img['liked_by'] as $user):?>
+                                        <?php echo $user;?> | 
+                                    <?php endforeach; ?>
+                                
+                            <?php endif;?>
+                                <form action="" method="post">
+                                    <div id="box">
+                                        <a class="btn btn-info" onclick="getfocus()" name="comment_btn" type="submit" href="gallery.php?type=comment&pictures_id=<?php echo $img['pictures_id']; ?>">click to comment...</a>
+                                        <textarea type="text" id="myText" class="comment" name="comment" placeholder="comment" required></textarea>
+                                        <!-- <textarea class="comment" type="text" name="comment" placeholder="comment" required></textarea> -->
+                                        <br/>
+                                    </div>
+
+                                    <input class="submit btn btn-success" name="comment_btn" type="submit" value="Post"/>
+                               
+                                </form>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        
+                </div> 
+        <?php endforeach; ?>
     </div>
     </div>
-
     <div class="footer">
         <?php
             include 'footer.php';
         ?>
     </div>
+    <script>
+function getfocus() {
+  document.getElementById("myText").focus();
+}
+</script>
 </body>
 </html>

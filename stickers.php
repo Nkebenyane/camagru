@@ -21,9 +21,31 @@ include 'header.php';
     </style>
 </head>
 <body>
-
+<div class="col-sm-3">
+         <a href="merge.php?pic=16.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/16.png"/></a>
+        <a href="merge.php?pic=16.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
     <div class="col-sm-3">
-
+         <a href="merge.php?pic=15.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/15.png"/></a>
+        <a href="merge.php?pic=15.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
+    <div class="col-sm-3">
+         <a href="merge.php?pic=14.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/14.png"/></a>
+        <a href="merge.php?pic=14.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
+    <div class="col-sm-3">
+         <a href="merge.php?pic=13.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/13.png"/></a>
+        <a href="merge.php?pic=13.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
+    <div class="col-sm-3">
+         <a href="merge.php?pic=11.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/11.png"/></a>
+        <a href="merge.php?pic=11.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
+    <div class="col-sm-3">
+         <a href="merge.php?pic=12.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/12.png"/></a>
+        <a href="merge.php?pic=12.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>  
+    </div>
+    <div class="col-sm-3">
         <a href="merge.php?pic=1.png&save=0&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>"><img src="stickers/1.png" /></a>
         <a href="merge.php?pic=1.png&save=1&pictures_id=<?php echo $_id = $_GET['pictures_id']; ?>">save</a>
     </div>

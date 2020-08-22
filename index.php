@@ -56,59 +56,17 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
 ?>
 <!DOCTYPE html>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Index</title>
 <html>
 <head>
     <style>
-        * {
-  box-sizing: border-box;
-}
 
-body {
-  /* font-family: Arial, Helvetica, sans-serif; */
-}
 
-/* Float four columns side by side */
-.column {
-    /* float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; */
-  margin: 0 auto;
-                width: 100%; 
-}
-
-/* Remove extra left and right margins, due to padding */
-/* .row {margin: 0 -5px;} */
-
-/* Clear floats after the columns */
-/* .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
-
-/* Responsive columns */
-/* @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-} */
-
-/* Style the counter cards */
-.card {
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-  transition: 0.3s;
-  /* width: 40%; */
-  padding:20px;
-            float:left;
-            width:33.3%;
-  
-}
         .top-container{
             margin: 0 auto;
             /* width: 60%; */
@@ -121,7 +79,7 @@ body {
             font-family: Ropa Sans;
             /* font-weight: normal; */
             font-size: 70px;
-            line-height: 10px;
+            line-height: 50px;
             text-align: center;
             /* font-style: italic; */
         }
@@ -129,7 +87,7 @@ body {
             font-weight: normal;
         }
         .btn{
-            border: 2px solid black;
+            /* border: 2px solid black; */
             background-color: white;
             color: black;
             padding: 14px 28px;
@@ -142,24 +100,11 @@ body {
             background-color: #EF52CC;
             color: white;
             }
-        /* .container_gallery{
-                margin: 0 auto;
-                width: 100%; 
-            }
-            .comment {
-                height: 70px;
-                width: 90%;
-                border-color: #333;
-                border-radius: 10px,
-            }
-            .col-sm-3{
-            padding:20px;
-            float:left;
-            width:33.3%;
-        } */
+   
     </style>
 </head>
 <body>
+   
     <div class="top-container">
         <h1>camagru</h1>
         <h3>share your moments<h3>
@@ -168,16 +113,15 @@ body {
             <input class="btn" type="submit" name="login" value="   Log in   " style="margin:15px;">
         </form>
     </div>
-    <!-- <div class="container">
-    <br/> -->
-    <!-- <br/>
-        <strong>Gallery (like, comment an image) </strong>
-    <hr/> -->
-    <div class="row">
-        <div class="column">
+    <div>
+        <hr/>
+    </div>
+    <div class="container"> 
+        <div class="row">
             
             <?php foreach($pictures as $img):?>
-                <div class="card">
+                <div class="col-md-3">
+                    <div class="thumbnail">
                         <h3><?php echo $img['users_name']; ?></h3>
                         <img src="uploads/<?php echo $img['pictures'] ?>"width="100%" height="350px"><br>
                         <?php if($img['likes'] == 0):?>
@@ -213,6 +157,7 @@ body {
                                 }
                             ?>
                     </div>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>
