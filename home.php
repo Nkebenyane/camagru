@@ -33,18 +33,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <title>Home</title>
 <head>
     
     <style>
 
         .btn {
-            border: 2px solid black;
-            background-color: #EF52CC;
+            background-color: lightgray;
             color: black;
             padding: 14px 28px;
             font-size: 16px;
-            cursor: pointer;
+            /* cursor: pointer; */
             /* color: #EF52CC; */
         }
         .row{
@@ -108,10 +108,10 @@
       border: solid #ccc 4px;
     }
 
-    .hovered {
+    /* .hovered {
         background: #f4f4f4;
         border-style: dashed;
-    }
+    } */
 
     .invisible{
         display: none;
@@ -127,8 +127,8 @@
         <strong>take or upload a picture</strong>
         <hr/>
         <form method="post" enctype="multipart/form-data">
-            <input type="file" name="profile" id="try_this" class="form-control" onchange="showImage.call(this)" accept=*/image>
-            <button type="submit" name="btn-add">upload</button>
+            <input type="file" name="profile" id="try_this" class="" onchange="showImage.call(this)" accept=*/image>
+            <button class="btn" type="submit" name="btn-add">upload</button>
         </form>
             <script>
                 function showImage()

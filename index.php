@@ -119,6 +119,7 @@ while ($row=$imgquery->fetch(PDO::FETCH_ASSOC)){
     <div class="container"> 
         <div class="row">
             
+            
             <?php foreach($pictures as $img):?>
                 <div class="col-md-3">
                     <div class="thumbnail">
