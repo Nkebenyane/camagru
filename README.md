@@ -1,4 +1,4 @@
-![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/index.png)
+![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/index2.png)
 ![alt text](https://github.com/Nkebenyane/camagru/blob/master/webscreens/Home.png)
 # camagru
 
